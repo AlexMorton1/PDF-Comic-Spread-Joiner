@@ -2,7 +2,7 @@
 
 This is a project intended to be used with Kindle comic converter to combine seperated 2 page spreads into a singular page.
 
-The App can be used in 2 ways, either manual input of page numbers that are part of a 2 page spread or via importing a JSON file with page number of 2 page spreads and a Manga value that will swap the left and right side of spread.
+The App can be used in 2 ways, either manual input of page numbers that are part of a 2 page spread or via importing a JSON file with page number of 2 page spreads and a rtl (right to left) value that will swap the left and right side of spread (helpful for manga).
 
 An example of the JSON structure from Vinland Saga Vol1 
 
