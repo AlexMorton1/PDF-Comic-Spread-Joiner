@@ -8,6 +8,7 @@ import json
 import os
 import threading
 import tkinter as tk
+import regex as re
 from tkinter import filedialog, messagebox, ttk
 
 from pypdf import PdfReader, PdfWriter, PageObject, Transformation
@@ -423,7 +424,11 @@ class PDFSpreadsApp(tk.Tk):
             # Auto-suggest output path
             if not self.output_var.get():
                 base, _ = os.path.splitext(path)
-                self.output_var.set(base + "_spreads.pdf")
+                path = os.path.normpath(path)
+                # Get the parent directory and then its basename
+                
+                output_path = os.path.dirname(base)+ "/" + os.path.basename(os.path.dirname(path)) + " Spreads/" + os.path.basename(base) + "_spreads.pdf"
+                self.output_var.set(output_path)
 
     def _browse_output(self):
         path = filedialog.asksaveasfilename(
