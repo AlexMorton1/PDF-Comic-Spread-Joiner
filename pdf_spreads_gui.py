@@ -324,6 +324,7 @@ class PDFSpreadsApp(tk.Tk):
         self._btn(ctrl, "Add",    self._add_range,    bg=ACCENT, fg="white").pack(side="left", padx=2)
         self._btn(ctrl, "Update", self._update_range, bg=PANEL_BG, fg=ACCENT2).pack(side="left", padx=2)
         self._btn(ctrl, "Delete", self._delete_range, bg=PANEL_BG, fg=ERROR).pack(side="left", padx=2)
+        self._btn(ctrl, "Clear", self._clear_all, bg=PANEL_BG, fg=ERROR).pack(side="left", padx=2)
 
         self.tree.bind("<<TreeviewSelect>>", self._on_row_select)
 
@@ -506,6 +507,12 @@ class PDFSpreadsApp(tk.Tk):
 
     def _delete_range(self):
         sel = self.tree.selection()
+        if sel:
+            self.tree.delete(*sel)
+            self._table_to_json()
+
+    def _clear_all(self):
+        sel = self.tree.get_children()
         if sel:
             self.tree.delete(*sel)
             self._table_to_json()
