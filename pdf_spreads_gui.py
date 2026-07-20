@@ -202,6 +202,12 @@ class PDFSpreadsApp(tk.Tk):
             font=("Segoe UI", 10), padx=4
         ).pack(side="left")
 
+        # ── Bottom bar
+        bar = tk.Frame(self, bg=PANEL_BG, pady=10)
+        bar.pack(fill="x", side="bottom")
+        self._btn(bar, "▶  Process PDF", self._run, bg=ACCENT, fg="white", padx=24).pack(side="right", padx=16)
+        self._btn(bar, "Clear log", self._clear_log, bg=PANEL_BG, fg=TEXT_DIM).pack(side="right", padx=4)
+
         # ── Two-column body
         body = tk.Frame(self, bg=DARK_BG)
         body.pack(fill="both", expand=True, padx=16, pady=12)
@@ -228,11 +234,7 @@ class PDFSpreadsApp(tk.Tk):
         self._build_json_section(right)
         self._build_log_section(right)
 
-        # ── Bottom bar
-        bar = tk.Frame(self, bg=PANEL_BG, pady=10)
-        bar.pack(fill="x", side="bottom")
-        self._btn(bar, "▶  Process PDF", self._run, bg=ACCENT, fg="white", padx=24).pack(side="right", padx=16)
-        self._btn(bar, "Clear log", self._clear_log, bg=PANEL_BG, fg=TEXT_DIM).pack(side="right", padx=4)
+        
 
     def _build_file_section(self, parent):
         self._section_label(parent, "Files").grid(row=0, column=0, sticky="w", pady=(0, 4))
