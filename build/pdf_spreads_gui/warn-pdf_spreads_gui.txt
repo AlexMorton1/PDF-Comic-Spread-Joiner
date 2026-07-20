@@ -189,3 +189,4 @@ missing module named fontTools.ttLib.newTable - imported by fontTools.ttLib (top
 missing module named 'Crypto.Util' - imported by pypdf._crypt_providers._pycryptodome (top-level)
 missing module named 'Crypto.Cipher' - imported by pypdf._crypt_providers._pycryptodome (top-level)
 missing module named Crypto - imported by pypdf._crypt_providers._pycryptodome (top-level)
+missing module named regex.DEFAULT_VERSION - imported by regex (delayed, optional), regex.regex (delayed, optional)
